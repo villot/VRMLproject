@@ -1,0 +1,299 @@
+#VRML V2.0 utf8
+Group { 
+	children                   # exposedField MFNode 
+	[ 
+		DEF bar0 Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			#rotation         0  1  0  1.571    # exposedField SFRotation 
+			scale            .3 .3 .3       # exposedField SFVec3f 
+			translation      0  0  0       # exposedField SFVec3f 
+			children 
+			[ 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  -.26178    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  0  0       # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance DEF bar Appearance { 
+								material         Material { 
+									ambientIntensity  0.2            # exposedField SFFloat 
+									diffuseColor      0 0 0    # exposedField SFColor 
+									emissiveColor     0 0 0          # exposedField SFColor 
+									shininess         0.2            # exposedField SFFloat 
+									specularColor     0 0 0          # exposedField SFColor 
+									transparency      0              # exposedField SFFloat 
+								} 
+								 
+							} 
+							#   exposedField SFNode 
+							geometry   Extrusion { 
+ 
+								beginCap         TRUE    # field   SFBool 
+								ccw              TRUE    # field   SFBool 
+								convex           TRUE    # field   SFBool 
+								creaseAngle      1.571       # field   SFFloat 
+								crossSection             # field   MFVec2f 
+								[ 
+									1 0, 
+									.866 .5, 
+									.5 .866, 
+									0 1, 
+									-.5 .866, 
+									-.866 .5, 
+									-1 0, 
+									-.866 -.5, 
+									-.5 -.866, 
+									0 -1, 
+									.5 -.866, 
+									.866 -.5, 
+									1 0, 
+									 
+								] 
+								endCap           TRUE    # field   SFBool 
+								orientation              # field   MFRotation 
+								[ 
+									0 0 1 0 
+								] 
+								scale                    # field   MFVec2f 
+								[ 
+									1 1 
+								] 
+								solid            FALSE    # field   SFBool 
+								spine                    # field   MFVec3f 
+								[ 
+									0 -.5 .866 
+									0 0 1, 
+									0 .5 .866, 
+									0 .866 .5, 
+									0 1 0, 
+								] 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				},   
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         0  0  1  0    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  -2.2  1      # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  4            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE        # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				}, 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  1.571    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  1  -2       # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  4            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE         # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				},	 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  0    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  -8 1       # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  8            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE         # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				}, 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  1.571    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  1  -6      # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  8            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE         # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				},	 
+				 
+			] 
+		}, 
+		Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			rotation         1  0  0  0    # exposedField SFRotation 
+			scale            1 1 1        # exposedField SFVec3f 
+			translation      4 0 0       # exposedField SFVec3f 
+			children 
+			[ 
+				USE bar0 
+				 
+			] 
+		}, 
+		Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			rotation         1  0  0  0    # exposedField SFRotation 
+			scale            .3 .3 .3        # exposedField SFVec3f 
+			translation      4 0 0       # exposedField SFVec3f 
+			children 
+			[ 
+				 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  0    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      0  -6 -10       # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  13            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE         # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				}, 
+				 
+				Transform { 
+					center           0  0  0       # exposedField SFVec3f 
+					rotation         1  0  0  0    # exposedField SFRotation 
+					scale            1  1  1       # exposedField SFVec3f 
+					translation      -13  -6 -10       # exposedField SFVec3f 
+					children 
+					[ 
+						Shape { 
+							appearance USE bar      #   exposedField SFNode 
+							geometry   Cylinder { 
+								bottom  TRUE         # field    SFBool 
+								height  13            # field    SFFloat 
+								radius  1            # field    SFFloat 
+								side    TRUE         # field    SFBool 
+								top     FALSE         # field    SFBool 
+							} 
+							#   exposedField SFNode 
+						} 
+						 
+					] 
+				}, 
+			] 
+		}, 
+		Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			rotation         1  0  0  0    # exposedField SFRotation 
+			scale            1 1 1        # exposedField SFVec3f 
+			translation      2 .3 -3.2        # exposedField SFVec3f 
+			children 
+			[ 
+				Shape { 
+					appearance DEF seatAppe Appearance { 
+						material         Material { 
+							ambientIntensity  0.2            # exposedField SFFloat 
+							diffuseColor      0.4 0.4 0.45    # exposedField SFColor 
+							emissiveColor     0 0 0          # exposedField SFColor 
+							shininess         0.2            # exposedField SFFloat 
+							specularColor     0 0 0          # exposedField SFColor 
+							transparency      0              # exposedField SFFloat 
+						} 
+						 
+						texture          NULL 
+						textureTransform NULL 
+					} 
+					      #   exposedField SFNode 
+					geometry  Box { 
+						size 4 2.2 .5     # field   SFVec3f 
+					} 
+					      #   exposedField SFNode 
+				} 
+				 
+			] 
+		}, 
+		Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			rotation         1  0  0  1.571    # exposedField SFRotation 
+			scale            1 1 1        # exposedField SFVec3f 
+			translation      2 1.5 -3.2        # exposedField SFVec3f 
+			children 
+			[ 
+				Shape { 
+					appearance USE seatAppe 
+					geometry Cylinder { 
+						bottom  TRUE         # field    SFBool 
+						height  .5            # field    SFFloat 
+						radius  2            # field    SFFloat 
+						side    TRUE         # field    SFBool 
+						top     TRUE         # field    SFBool 
+					} 
+					 
+				} 
+				 
+			] 
+		}, 
+		Transform { 
+			center           0  0  0       # exposedField SFVec3f 
+			rotation         1  0  0  0   # exposedField SFRotation 
+			scale            1 1 1        # exposedField SFVec3f 
+			translation      2  -1 -1.5 # exposedField SFVec3f 
+			children 
+			[ 
+				Shape { 
+					appearance USE seatAppe 
+					geometry Box { 
+						size 4 .5 3     # field   SFVec3f 
+					} 
+					 
+				} 
+				 
+			] 
+		}, 
+	] 
+} 

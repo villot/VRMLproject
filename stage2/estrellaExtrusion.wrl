@@ -1,0 +1,52 @@
+#VRML V2.0 utf8
+
+DEF marcos Group {
+	children [
+		DEF marco Shape {
+			appearance Appearance {
+    			material Material {
+    				diffuseColor 1 1 0
+    			}
+			}
+			geometry Extrusion {
+				solid FALSE
+				crossSection [
+					-0.05 0.05,
+					-0.05 -0.05,
+					0.05 -0.05,
+					0.05 0.05,
+					-0.05 0.05
+				] 
+				spine [
+					-1 1 0,
+					-1 -1 0, 
+					1 -1 0,
+					1 1 0,
+					-1 1 0,
+				]
+			}
+		}
+		Transform {
+			rotation 0 0 1 0.785
+			children [
+				USE	marco
+			]
+		}
+
+	]
+
+}
+
+Transform {
+	rotation 0 0 1 0.39 
+	scale 0.75 0.75 0.75
+	children [
+		USE	marcos
+	]
+}
+
+
+# force browser into 'examine mode'
+NavigationInfo{
+	type "EXAMINE"
+}

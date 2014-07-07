@@ -1,0 +1,169 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+		DEF	Fila
+		Group  {
+			children [
+				Transform {
+					translation	-10.0 0.0 0.0
+    				children [
+						DEF silla Inline {
+							url	"sofa.wrl"
+						}
+					]
+				},
+				Transform {
+					translation	-15.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	-20.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	-5.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	0.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	5.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	10.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	15.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+				Transform {
+					translation	20.0 0.0 0.0
+    				children [
+						USE silla
+					]
+				},
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -8.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -16.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -24.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -32.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -40.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -48.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -56.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -64.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -72.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+		Group  {
+			children [
+				Transform {
+					translation	0.0 0 -80.0
+					children [
+					USE	Fila
+					]
+				}
+			]
+		},
+
+	]
+}
+	
