@@ -1,0 +1,111 @@
+#VRML V2.0 utf8
+
+Group {
+    children [
+        DEF Esfera Shape {
+            appearance DEF White Appearance {
+                material Material {
+                    diffuseColor 1.0 1.0 1.0
+                }
+            }
+            geometry Sphere {
+                radius 1
+            }
+        },
+    	Transform {
+    		scale 0.5 0.5 0.5
+			translation 0.0 1.25 0.0
+    		children [
+				USE	Esfera
+        	]
+		},
+		Transform {
+    		scale 0.5 0.5 0.5
+			rotation 1.0 0.0 0.0 1.57
+			translation 0.0 1.25 0.5
+    		children [
+				Shape {
+					appearance DEF Red Appearance {
+                		material Material {
+                    		diffuseColor 1.0 0.0 0.0
+                		}
+            		}
+            		geometry Cone {
+                		height 1.0
+						bottomRadius 0.25
+					}
+				}
+        	]
+		},
+		Transform {
+			translation 0.15 1.30 0.5
+    		children [
+				DEF Ojo Shape {
+					appearance DEF Black Appearance {
+                		material Material {
+                    		diffuseColor 0.0 0.0 0.0
+                		}
+            		}
+					geometry Sphere {
+                		radius 0.05
+					}
+				}
+			]
+		},
+		Transform {
+			translation -0.15 1.30 0.5
+    		children [
+				USE Ojo
+    		]
+		},
+		Transform {
+			scale 0.5 0.5 0.5
+			rotation 0 0 1 -1.04
+			translation	0.5 0.5 0.0
+    		children [
+				Inline {
+					url	"escoba.wrl"
+				}
+			]
+		},
+		Transform {
+			translation	0.0 1.70 0.0
+    		children [
+				Inline {
+					url	"sombrero.wrl"
+				}
+			]
+		},
+		Transform {
+			rotation 1 0 0 1.57 
+			translation 0.0 0.0 1.0
+			children [
+				DEF	Boton Shape	{
+					appearance DEF Pink Appearance {
+						material Material {
+							diffuseColor 1.0 0.3 0.5
+						}
+					}
+					geometry Cylinder {
+						height 0.05
+						radius 0.05
+					}
+				}
+			]
+		},
+		Transform {
+			rotation 1 0 0 -0.69 
+			translation 0.0 -0.65 0.75
+			children [
+				USE	Boton
+			]
+		},
+		Transform {
+			rotation 1 0 0 0.69 
+			translation 0.0 0.65 0.75
+			children [
+				USE	Boton
+			]
+		},
+	]
+}

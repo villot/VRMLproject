@@ -1,0 +1,79 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+		Transform {
+			scale 2 2 2
+			translation	20.0 2.0 -20.0
+			children [
+				Inline {
+					url	"castillo.wrl"
+				}
+			]
+		}
+		Transform {
+			translation	-10.0 1.0 10.0
+    		children [
+				DEF muneco Inline {
+					url	"muneco.wrl"
+				}
+			]
+		},
+		Transform {
+			scale 0.3 0.3 0.3
+			rotation 0 1 0 0.22
+			translation	10.0 0.3 6.0
+    		children [
+				USE muneco
+			]
+		},
+		Transform {
+			scale 1.3 1.3 1.3
+			rotation 0 1 0 1.78
+			translation	6.0 1.3 10.0
+    		children [
+				USE muneco
+			]
+		},
+		Transform {
+			scale 0.2 0.2 0.2
+			rotation 0 1 0 1.22
+			translation	10.0 0.2 10.0
+    		children [
+				USE muneco
+			]
+		},
+		Transform {
+			scale 1.8 1.8 1.8
+			rotation 0 1 0 -0.16
+			translation	0.0 1.8 0.0
+    		children [
+				USE muneco
+			]
+		},
+		Transform {
+			scale 4 4 4
+			rotation 0 1 0 -0.48
+			translation	8.0 4.0 -7.0
+    		children [
+				USE muneco
+			]
+		},
+		Anchor {
+    		url "cursoVRML/intro.htm"
+		   	description "Aprende VRML"
+    		children [
+				Transform {
+					rotation 0 1 0 -0.5
+					translation	-10.0 2.5 2.0
+    				children [
+						Inline {
+							url	"cartel.wrl"
+						}
+					]
+				}
+			]
+		}
+	]
+
+}

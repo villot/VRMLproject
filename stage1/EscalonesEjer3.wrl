@@ -1,0 +1,27 @@
+#VRML V2.0 utf8
+
+Group {
+			children [
+				Transform {
+					translation  1.0 -2.25 0.0
+					children DEF Caja Shape {
+            		appearance DEF Blue Appearance {
+                		material Material {
+                    		diffuseColor 0.0 0.0 1.0
+                		}
+            		}
+					geometry Box {
+						size 2.0 0.2 0.5
+				
+					}
+				}
+
+				},
+				Transform {
+					rotation 0 1 0.0 0.6
+					translation	0.8 -1.8 -0.6
+					children USE Caja
+				}
+
+			]
+		}

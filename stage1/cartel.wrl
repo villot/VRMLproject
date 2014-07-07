@@ -1,0 +1,64 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+		#Caja
+		Transform {
+    		translation 2.5 1.25 0.0
+    		children [
+				DEF Caja Shape {
+            		appearance DEF White Appearance {
+                		material Material {
+                    		diffuseColor 1.0 1.0 1.0
+                		}
+            		}
+					geometry Box {
+						size 5.0 2.5 0.5
+				
+					}
+				}
+        	]
+		},
+
+		DEF Palo Shape {
+            appearance DEF PinkFloyd Appearance {
+                material Material {
+                    diffuseColor 1.0 0.0 1.0
+                }
+            }
+			geometry Cylinder {
+				height 5.0
+				radius 0.1
+		
+			}
+				
+        	
+		},
+		Transform {
+			translation	5.0 0.0 0.0
+			children 
+				USE	Palo
+		},
+		Transform {
+			translation	2.5 1.5 0.5
+			children [
+				DEF	VeryText Shape {
+					appearance DEF LeRed Appearance	{
+						material Material {
+							diffuseColor 0.8 0.0 0.0
+						}
+					}
+					geometry Text {
+						string ["Curso de", "VRML 2.0"]
+						fontStyle FontStyle {
+                			 justify "MIDDLE"
+							 size 0.75
+							 spacing 1.25
+                		}
+					}
+
+				}
+			]
+		}
+	]
+}
