@@ -1,0 +1,145 @@
+#VRML V2.0 utf8
+
+Transform  {
+	translation	0 0.15 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0.8 0.8
+				}
+			}
+			geometry Box {
+				size 0.6 0.3 0.6
+			}
+		}
+	]
+}
+
+DEF BaseXForm Transform {
+	translation 0 0.55 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.65 0.65 0.65
+				}
+			}
+			geometry Cylinder {
+				height 0.5
+				radius 0.25
+			}
+		}
+		DEF	BaseSensor CylinderSensor {}
+		Transform {
+			translation	0 0.75 0
+			children [
+				DEF	Ironwood Shape	{
+					appearance Appearance {
+						material Material {}
+					}
+					geometry Cylinder {
+						radius 0.04
+						height 1
+					}
+				}
+				Transform {
+					rotation 1 0 0 1.57
+					translation	0 0.55 0
+					children [
+						DEF	ConnectionXForm Transform {
+							children [
+								Shape {
+									appearance Appearance {
+										material Material {
+											diffuseColor 0.9 0.9 0.9
+										}
+									}
+									geometry Cylinder {
+										height 0.2
+										radius 0.1
+									}
+								}
+								DEF Satellite Transform {
+									scale 1 4 4
+									children [
+										USE	Ironwood
+									]
+								}
+								Transform {
+									translation	0 0 -0.3
+									children [
+										USE	Satellite
+									]
+								}
+								Transform {
+									translation	0 0 0.3
+									children [
+										USE	Satellite
+									]
+								}
+								Transform {
+									translation	0 0 -0.6
+									children [
+										USE	Satellite
+									]
+								}
+								Transform {
+									translation	0 0 0.6
+									children [
+										USE	Satellite
+									]
+								}
+								Transform {
+									translation	0 0 -0.9
+									children [
+										USE	Satellite
+									]
+								}
+								Transform {
+									translation	0 0 0.9
+									children [
+										USE	Satellite
+									]
+								}
+								DEF ConnectionSensor CylinderSensor {}
+								Transform {
+									rotation 0 0 1 -1.57
+									children [
+										Transform {
+											translation	0 0.5 0
+											children [
+												USE	Ironwood
+												DEF SatelliteXForm Transform {	
+													children [
+														Transform {
+															scale 0.1 0.1 0.1
+															rotation 1 0 0 -1.57
+															translation	0 0.6 0.1395
+															children [
+																Inline {
+																	url	"antenna.wrl"
+																}
+															]
+														}
+														DEF	SatelliteSensor CylinderSensor  {}
+													]
+													ROUTE SatelliteSensor.rotation_changed TO	SatelliteXForm.rotation
+												}
+											]
+										}
+									]
+								}
+
+							]
+							ROUTE ConnectionSensor.rotation_changed TO ConnectionXForm.rotation
+						}
+					]
+				}
+			]
+		}
+	]
+	ROUTE BaseSensor.rotation_changed TO BaseXForm.rotation
+}
+
+

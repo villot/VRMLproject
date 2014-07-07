@@ -1,0 +1,68 @@
+#VRML V2.0 utf8
+
+# torchlow.wrl - Low resolution torch
+# Mike Heck
+# Siggraph 96
+#
+# Notes: As of 15-May-96
+#
+# 1) Flame color isn't quite right.
+# 2) Don't forget the redundant final "-1" in coordIndex
+#    fields or nothing will get drawn!   
+
+# Torch - low detail
+Group {
+    children [
+        # Two rings around fire pot
+        Shape {
+            # Just use a single flat face for each
+            appearance DEF COLOR1 Appearance {
+                material Material { diffuseColor .3 .3 .3
+                                    specularColor 0 0 0   }
+            }
+            geometry IndexedFaceSet {
+                coord Coordinate { point [ -.40  .05 0.1,
+                                           -.40 -.05 0.1,
+                                            .40 -.05 0.1,
+                                            .40  .05 0.1,
+                                           -.40  .25 0.1,
+                                           -.40  .15 0.1,
+                                            .40  .15 0.1,
+                                            .40  .25 0.1 ] }
+                coordIndex [ 0, 1, 2, 3, -1,
+                             4, 5, 6, 7, -1 ]
+                solid FALSE
+            }
+        },
+        # Vertical bars on fire pot
+        # None
+        # Torch handle
+        Shape {
+            # just use a single flat face
+            appearance USE COLOR1
+            geometry IndexedFaceSet {
+                coord Coordinate { point [ -.15  0.0 0.0,
+                                            .00 -1.5 0.0,
+                                            .15  0.0 0.0 ] }
+                coordIndex [ 0, 1, 2, -1 ]
+                solid FALSE
+            }
+        },
+        # Torch mounting bracket
+        # None
+        # Fire
+        Shape {
+            # Just one flame point and just one color
+            appearance Appearance {
+                material Material { diffuseColor .9 .3 0 }
+            }
+            geometry IndexedFaceSet {
+                coord Coordinate { point [ .18 0.0 .05,
+                                           .00 1.2 .05,
+                                          -.18 0.0 .05 ] }
+                coordIndex [ 0, 1, 2, -1 ]
+                solid FALSE
+            }
+        }
+    ]
+}

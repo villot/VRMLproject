@@ -1,0 +1,183 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+		WorldInfo {
+            title "Tablero de Juego"
+            info  [
+                "David Villota"
+            ]
+        },
+        NavigationInfo {
+			speed 1.5
+			headlight FALSE
+		},
+		
+		PointLight {
+            location 0.0 10.0 0.0
+            radius   14.0
+        },
+		Fog {
+            color 0.8 0.8 0.8
+            fogType "LINEAR"
+            visibilityRange 200
+        },
+
+		Transform {
+			translation	-12.0 0 -12.0
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+						}
+					}
+					geometry ElevationGrid {
+						solid FALSE
+						xDimension 9  
+						zDimension 9  
+						xSpacing 3  
+						zSpacing 3
+						height [
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0  
+							0 0 0 0 0 0 0 0 0
+						]
+						colorPerVertex FALSE
+						color Color {  
+							color [  
+    							0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1,  
+    							1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0,  
+    							0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1,  
+    							1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0,  
+    							0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1,  
+    							1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0,  
+    							0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1,  
+    							1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0, 1 1 1, 0 0 0,  
+							]  
+						}  
+					}
+				}
+			]
+		},
+
+		Transform {
+			translation	0 2 -12
+			children [
+				Shape {
+					appearance Appearance {
+						texture ImageTexture {
+							url	"background.jpg"
+						}
+						textureTransform TextureTransform {
+							scale 16 4
+						}
+					}
+					geometry Box {
+						size 24 4 0.1
+					}
+				}
+			]
+		},
+
+		Transform {
+			translation	0 2 -11.5
+			children [
+				SpotLight {
+					color 1.0 0.0 0.0
+					location 0 5 0
+    				direction 0.0 -1.0 0.0
+					beamWidth 0.7
+    				cutOffAngle 0.3
+    				radius 9.0
+					intensity 1.0
+				},
+				DEF Antorcha LOD {
+					range [ 18, 24 ]
+					level [
+						Inline { url "torchigh.wrl"}
+						Inline { url "torchmed.wrl"}
+						Inline { url "torchlow.wrl"}
+					]
+				}
+			]
+		}
+
+		Transform {
+			translation	-10 2 -11.5
+			children [
+				SpotLight {
+					color 1.0 0.0 0.0
+					location 0 5 0
+    				direction 0.0 -1.0 0.0
+					beamWidth 0.7
+    				cutOffAngle 0.3
+    				radius 9.0
+					intensity 1.0
+				},
+				USE	Antorcha
+			]
+		},
+
+		Transform {
+			translation	10 2 -11.5
+			children [
+				SpotLight {
+					color 1.0 0.0 0.0
+					location 0 5 0
+    				direction 0.0 -1.0 0.0
+					beamWidth 0.7
+    				cutOffAngle 0.3
+    				radius 9.0
+					intensity 1.0
+				},
+				USE	Antorcha
+			]
+		},
+
+		Background {
+			skyColor [
+        		0.7 0.0 0.2,
+        		0.5 0.0 1.0,
+        		1.0 1.0 1.0
+    		]
+    		skyAngle [
+				1.309,
+				1.571
+			]
+    		groundColor [
+        		0.1 0.10 0.0,
+        		0.4 0.25 0.2,
+        		0.6 0.60 0.6,
+    		]
+    		groundAngle [
+				1.309,
+				1.571
+			]
+		},
+		Viewpoint {
+    		position    0 3 16
+    		orientation 0 0 1 0
+    		description "DefaultView"
+		},
+		Viewpoint {
+    		position    14 3 14
+    		orientation 0 1 0 0.7
+    		description "Corner view"
+		},
+
+		Transform {
+			scale 2 2 2
+			children [
+				Inline {
+					url "satellite.wrl"
+				}
+			]
+		}
+	]
+}
